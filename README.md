@@ -17,7 +17,7 @@ A responsive portfolio + booking website for a freelance photography service.
 - **Hosting**: ByetHost (Free Hosting)
 
 ## 🚀 Live Demo
-🌐 [Visit Website](http://demo123.byethost18.com)
+🌐 [Visit Website](http://demo123.byethost18.com/photographer)
 
 ## 📂 Folder Structure
 ├── index.html

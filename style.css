@@ -1,0 +1,882 @@
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+    background-color: #000;
+    font-family: 'Segoe UI', 'Poppins', sans-serif;
+}
+h1, h2 {
+    font-size: 40px;
+    color: aliceblue;
+}
+.glow-dot {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #f5c518, rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 15px #f5c518, 0 0 30px #f5c518;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out;
+
+}
+
+/*############## Navbar ################*/
+nav {
+    background-color: #000;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+ul.navbar {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    overflow: hidden;  
+}
+ul.navbar li {
+    white-space: nowrap;
+}
+ul.navbar li a {
+    text-decoration: none;
+    color: rgb(161, 161, 162);
+    font-size: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+}
+ul.navbar li a:hover, .dropdown a:hover,.close-btn:hover, .navbar a.active-link {
+    color: #f5c518;
+    text-transform:uppercase;
+    transform: scale(1.1) translateY(-2px);
+}
+
+.dropdown {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+.close-btn {
+  display: none;
+}
+
+/*########### first division - home ###############*/
+.hero {
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+.name {
+    font-size: 100px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #fff6cc, #f5c518, #c98f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(245, 197, 24, 0.6);
+}
+.subtitle {
+    font-size: 25px;
+    color: #feea91;
+    margin-top: 0;
+    letter-spacing: 2px;
+}
+.hero-button {
+    margin-top: 30px;
+    background-color: transparent;
+    color: #f5c518;
+    border: 2px solid #f5c518;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(245, 197, 24, 0.2);
+}
+.hero-button:hover {
+    background-color: #f5c518;
+    color: #000;
+    box-shadow: 0 0 25px rgba(245, 197, 24, 0.6);
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: var(--delay);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    
+/*########### second division - about ################*/  
+.about-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    z-index: 1;
+}
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  animation: bgFade 15s infinite;
+}
+@keyframes bgFade {
+  0% {
+    background-image: url('https://picsum.photos/id/1015/1200/800');
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  34% {
+    background-image: url('https://picsum.photos/id/1016/1200/800');
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+  68% {
+    background-image: url('https://picsum.photos/id/1018/1200/800');
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.seconddiv {
+    margin-top: 140px;
+}
+.div2img {
+  position: relative;
+  color: white;
+  height: 80vh;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.div2text {
+  width: 40%;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 1;
+  transform: none;    
+}
+.div2text span {
+  display: block;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: lineFadeIn 0.6s ease-out forwards;
+}
+@keyframes lineFadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*########### third division - gallery #############*/
+.gallery-section{
+  padding: 90px 40px;
+  background-color: #000;
+  color: #f5c518;
+}
+.section-title {
+  color: #f5c518;
+  font-size: 40px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.gallery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}   
+.gallery-card {
+  background-color: transparent;
+  width: 280px;
+  height: 200px;
+  perspective: 1000px;
+}
+.gallery-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+.gallery-card:hover .gallery-card-inner,.gallery-card.flipped .gallery-card-inner {
+  transform: rotateY(180deg);
+  box-shadow: 0 0 10px #f5c518, 0 0 20px #f5c518;
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.flip-card-back {
+  background-color: #1a1a1a;
+  color: #f5c518;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.flip-card-back a {
+  color: #f5c518;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #f5c518;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.flip-card-back a:hover {
+  background-color: #f5c518;
+  color: #000;
+}
+
+/*########### fourth division - services ##############*/
+#services {
+  scroll-margin-top: 120px;
+}
+.service-offered {
+  color: aliceblue;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  line-height: 2;
+}
+.service-item {
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+.service-item:hover {
+  color: #f5c518;
+}
+.tooltip-box {
+  position: absolute;
+  background-color: #1a1a1a;
+  color: #f5c518;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: normal;
+  box-shadow: 0 0 10px #f5c518;
+  z-index: 9999;
+  pointer-events: none;
+  animation: fadeIn 0.2s ease-in-out;
+  white-space: normal;           
+  max-width: 90vw;             
+  word-wrap: break-word; 
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.packages-section {
+  padding: 80px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+ .section-subtitle {
+  font-size: 36px;
+  color: #f5c518;
+  margin-bottom: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.package-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.package-card {
+  background-color: #111;
+  border: 2px solid #f5c518;
+  border-radius: 10px;
+  width: 260px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.package-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #f5c518;
+}
+.package-card h3 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #f5c518;
+}
+.package-card .price {
+    color: aliceblue;
+  font-size: 20px;
+  margin: 10px 0;
+}
+.package-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  color: #ccc;
+  text-align: left;
+}
+.package-card ul li {
+  margin: 8px 0;
+}
+.package-card.custom {
+  border-style: dashed;
+}
+
+.package-includes {
+  margin-top: 60px;
+  color: #f5c518;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #111;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(245, 197, 24, 0.2);
+}
+.package-includes h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #f5c518;
+  letter-spacing: 1px;
+}
+.package-includes ul {
+  list-style: none;
+  padding: 0;
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.package-includes ul li {
+  margin: 10px 0;
+  transition: transform 0.2s ease;
+}
+.package-includes ul li:hover {
+  transform: translateX(5px);
+  color: #fff;
+}
+
+.booking-section {
+  background-color: #000;
+  color: #f5c518;
+  padding: 90px 20px;
+  text-align: center;
+}
+.booking-info {
+  list-style: none;
+  padding: 0;
+  font-size: 20px;
+  line-height: 2;
+}
+.booking-info li {
+  color: aliceblue;
+  margin-bottom: 10px;
+  position: relative;
+  transition: transform 0.3s;
+}
+.booking-info li:hover {
+  color: #f5c518;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px #f5c518;
+}
+
+.btn-book {
+  background-color: transparent;
+  color: #f5c518;
+  border: 2px solid #f5c518;
+  padding: 10px 20px;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-book:hover {
+  background-color: #f5c518;
+  color: #000;
+  box-shadow: 0 0 15px rgba(245,197,24,0.5);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #111010;
+}
+.booked { color: red; }
+.unavailable { color: orange; }
+.available { color: green; }
+
+/*########## booking ###############*/
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+.modal-content {
+  background: #111;
+  color: #fff;
+  padding: 30px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+}
+.modal-content button {
+  background: #f5c518;
+  border: none;
+  padding: 10px 20px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: gold;
+}
+#availability-calendar {
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+/*########### fifth division - contact #############*/
+.contact-section {
+  background-color: #000;
+  color: #f5c518;
+  padding: 80px 20px;
+  text-align: center;
+}
+.contact-section .section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.contact-text {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  background: #1a1a1a;
+  border: 1px solid #f5c518;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  outline: none;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+.contact-form button {
+  background: #f5c518;
+  color: #000;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.contact-form button:hover {
+  background: aliceblue;
+  color: #000;
+}
+.contact-info p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: aliceblue;
+}
+.contact-info a {
+  color: #f5c518;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/*############ gallery individual pages #############*/
+.gallery-category-header {
+  margin-top: 120px;
+  text-align: center;
+  color: #f5c518;
+  font-size: 40px;
+  padding: 30px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.photo-grid {
+  padding: 20px;
+  column-count: 3;
+  column-gap: 15px;
+}
+.grid-item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(245, 197, 24, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grid-item img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+.grid-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #f5c518;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #f5c518;
+}
+.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #f5c518;
+  cursor: pointer;
+  z-index: 2001;
+  transition: transform 0.2s;
+}
+.close-lightbox:hover {
+  transform: scale(1.2);
+}
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: #f5c518;
+  cursor: pointer;
+  user-select: none;
+  padding: 20px;
+  z-index: 2001;
+}
+.lightbox-arrow:hover {
+  color: #fff;
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+.lightbox-controls {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+.lightbox-controls button {
+  background: #f5c518;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.lightbox-controls button:hover {
+  background: #fff;
+}
+
+/*############ footer ###############*/
+.site-footer {
+  background-color: #000;
+  color: #f5c518;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+.footer-content p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: aliceblue;
+}
+.footer-links {
+  margin-bottom: 15px;
+}
+.footer-links a {
+  color: aliceblue;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #f5c518;
+  text-shadow: 0 0 5px #f5c518;
+}
+.social-icons a {
+  color: aliceblue;
+  margin: 0 8px;
+  font-size: 18px;
+  transition: transform 0.3s, color 0.3s;
+}
+.social-icons a:hover {
+  color: #f5c518;
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+
+/*############## Mobile ##############*/
+@media screen and (max-width: 680px) {
+  .photo-grid {
+    column-count: 2;
+  }
+}
+@media screen and (max-width: 480px) {
+  .photo-grid {
+    column-count: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  body.noscroll {
+    overflow: hidden;
+  }
+
+  .glow-dot {
+    display: none !important;
+  }
+  .gallery-card-inner {
+    transform: none !important;
+  }
+
+  .flip-card-back {
+    transform: none !important;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    height: auto;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .flip-card-back a{
+    padding: 5px;
+  }
+  .flip-card-front img {
+    filter: brightness(0.6);
+  }
+
+  .dropdown {
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .close-btn {
+    display: block;
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    cursor: pointer;
+  }
+
+  ul.navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)),
+      url('https://www.transparenttextures.com/patterns/black-linen.png');
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  ul.navbar.responsive {
+    display: flex;
+  }
+
+  ul.navbar.responsive li {
+    display: block;
+    float: none;
+    margin: 10px 0;
+  }
+
+  ul.navbar.responsive li a {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .div2img {
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .div2text {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .div2text span {
+    font-size: inherit;
+  }
+
+  .gallery-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tooltip-box {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .package-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form {
+    padding: 0 10px;
+  }
+}

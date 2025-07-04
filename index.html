@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <meta name="description" content="Professional Photography Portfolio by Lily David">
+    <meta name="keywords" content="photography, portrait, wedding, event, gallery">
+    <meta name="author" content="Lily David">
+    <title>Lily David</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <h2>Lily David</h2>
+        </div>
+        
+        <div class="dropdown" onclick="dropdownMenu()">
+            <a>&#9776;</a>
+        </div>
+
+            <ul class="navbar" id="dropdownclick">
+                <li class="close-btn" onclick="dropdownMenu()">×</li>
+                <li><a href="#home" class="nav-link" onclick="closeDropdown()">Home</a></li>
+                <li><a href="#about" class="nav-link" onclick="closeDropdown()">About</a></li>
+                <li><a href="#galleries" class="nav-link" onclick="closeDropdown()">Galleries</a></li>
+                <li><a href="#services" class="nav-link" onclick="closeDropdown()">Services</a></li>
+                <li><a href="#contact" class="nav-link" onclick="closeDropdown()">Contact</a></li>
+            </ul>  
+    </nav>
+ 
+
+
+    <section class="hero" id="home">
+        <h1 style="margin:0;"><span class="name reveal" style="--delay: 0.2s;">LILY DAVID</span></h1>
+        <p class="subtitle reveal" style="--delay: 0.5s;">Capturing Moments, Creating Memories</p>
+        <div>
+            <a href="#galleries"class="hero-button reveal" style="--delay: 1s;">View My Work</a>
+            <a href="#contact"class="hero-button reveal" style="--delay: 1s;">HIRE ME</a>
+        </div>
+    </section>
+    
+
+
+    <section id="about" class="about-section">
+        <div class="div2img seconddiv">
+        <div class="div2text animate-on-scroll">
+            <h1 class="section-title">ABOUT ME</h1>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br>
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut <br>
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris<br> 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor<br> 
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat <br>
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,<br>
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </div>
+    </section>
+
+
+
+    <section id="galleries" class="gallery-section">
+        <h2 class="section-title">GALLERY</h2>
+
+        <div class="gallery-cards">
+            <div class="gallery-card">
+                <div class="gallery-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://picsum.photos/seed/portraits/300/200" alt="Portraits">
+                     </div>
+                    <div class="flip-card-back">
+                        <a href="portraits.html">Potraits</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-card">
+                <div class="gallery-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://picsum.photos/seed/weddings/300/200" alt="Weddings">
+                     </div>
+                    <div class="flip-card-back">
+                        <a href="weddings.html">Weddings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://picsum.photos/seed/events/300/200" alt="Events">
+                     </div>
+                    <div class="flip-card-back">
+                        <a href="events.html">Events</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://picsum.photos/seed/fashion/300/200" alt="Fashion">
+                     </div>
+                    <div class="flip-card-back">
+                        <a href="fashion.html">Fashion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://picsum.photos/seed/landscape/300/200" alt="Landscapes">
+                     </div>
+                    <div class="flip-card-back">
+                        <a href="landscapes.html">Landscapes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://picsum.photos/seed/food/300/200" alt="Food">
+                     </div>
+                    <div class="flip-card-back">
+                        <a href="food.html">Food</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="services" class="service-section">
+        <h2 class="section-title">Services Offered</h2>
+        <!--  services  -->
+        <p class="service-offered">
+            <span class="service-item" data-service="Individual photo sessions, headshots, and creative portraits.">Portrait Photography</span>,
+            <span class="service-item" data-service="Wedding day coverage, couple shoots, and candid moments.">Wedding Photography</span>,
+            <span class="service-item" data-service="Corporate events, parties, and live functions.">Event Photography</span>,
+            <span class="service-item" data-service="Runway shows, product styling, brand campaigns.">Fashion Photography</span>,
+            <span class="service-item" data-service="Nature shots, real estate, travel sceneries.">Landscape Photography</span>,
+            <span class="service-item" data-service="Plated meals, styled food setups, restaurant menus.">Food Photography</span>
+        </p>
+        <!-- toottip -->
+        <div id="serviceTooltip" class="tooltip-box" style="display: none;">
+            <div class="tooltip-content"></div>
+        </div>
+
+        <!--  packages  -->
+        <div id="packages" class="packages-section">
+            <h2 class="section-subtitle">Photography Packages</h2>
+            <div class="package-container">
+                <div class="package-card">
+                    <h3>Basic</h3>
+                    <p class="price">₹5,000</p>
+                    <ul>
+                        <li>1‑Hour Session</li>
+                        <li>10 Edited Photos</li>
+                        <li>Online Gallery</li>
+                    </ul>
+                </div>
+                <div class="package-card">
+                    <h3>Standard</h3>
+                    <p class="price">₹10,000</p>
+                    <ul>
+                        <li>2‑Hour Session</li>
+                        <li>25 Edited Photos</li>
+                        <li>Print Package</li>
+                    </ul>
+                </div>
+                <div class="package-card">
+                    <h3>Premium</h3>
+                    <p class="price">₹20,000</p>
+                    <ul>
+                        <li>4‑Hour Session</li>
+                        <li>50 Edited Photos</li>
+                        <li>Album + Prints</li>
+                    </ul>
+                </div>
+                <div class="package-card custom">
+                    <h3>Custom</h3>
+                    <p class="price">Get a Quote</p>
+                    <ul>
+                    <li>Tailored Session</li>
+                    <li>Based on Your Needs</li>
+                    <li>Consultation Included</li>
+                    </ul>
+                    
+                </div>
+             </div>
+        </div>
+        
+
+        <!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeBookingModal()">&times;</span>
+    <h2>Book Your Session</h2>
+
+    <form action="submit_booking.php" method="POST" class="booking-form">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <input type="date" name="booking_date" required>
+      <input type="time" name="booking_time">
+
+      <select name="package" id="packageDropdown" required>
+        <option value="">Select a Package</option>
+        <option value="Basic">Basic – ₹5,000</option>
+        <option value="Standard">Standard – ₹10,000</option>
+        <option value="Premium">Premium – ₹20,000</option>
+        <option value="Custom">Custom – Get a Quote</option>
+      </select>
+
+      <input type="text" name="location" placeholder="Shoot Location" required>
+      <textarea name="special_requests" placeholder="Any special requests?"></textarea>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+  </div>
+</div>
+
+        <div class="package-includes">
+            <h3>What’s Included</h3>
+            <ul>
+                <li>✨ Professional editing & retouching</li>
+                <li>📁 Online gallery access</li>
+                <li>🖼️ High-resolution & web-optimized files</li>
+                <li>📝 Print rights</li>
+                <li>➕ Optional add-ons (albums, prints, second shooter, etc.)</li>
+            </ul>
+        </div>
+
+        <div id="booking" class="booking-section">
+            <h2 class="section-subtitle">Booking & Availability</h2>
+            <ul class="booking-info">
+                <li>Now booking for <strong>2025</strong></li>
+                <li><strong>Limited weekend slots</strong> available</li>
+                <li>Contact for <strong>last-minute availability</strong></li>
+            </ul>
+
+            <button class="btn-book" onclick="openBookingModal()">Book Now</button>
+            <button class="btn-book" onclick="openAvailabilityModal()">Check Availability</button>
+
+            <!-- Check Availability Modal -->
+<div id="availabilityModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeAvailabilityModal()">&times;</span>
+    <h2>Availability Calendar</h2>
+    <div id="availability-calendar">
+        
+    </div>
+  </div>
+</div>
+
+    </section>
+
+
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="contact-text">Let's capture your moments beautifully. Reach out for bookings or queries!</p>
+  
+        <form id="contactForm" class="contact-form" method="post" action="contact.php">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+
+  <div class="contact-info">
+    <p>Email: <a href="mailto:contact@lilydavid.com">contact@lilydavid.com</a></p>
+    <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+    <p>Location: Chennai, India</p>
+  </div>
+</section>
+
+
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Lily David Photography. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#galleries">Galleries</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="admin_login.php">Admin</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-behance"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+</body>
+
+</HTML>

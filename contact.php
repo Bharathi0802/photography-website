@@ -24,8 +24,11 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';  
     $mail->SMTPAuth = true;
-    $mail->Username = 'iniyarul.1500@gmail.com';     // your Gmail
-    $mail->Password = 'ukbx atdc tlae lvsu';       // App Password (not Gmail login)
+    
+    $config = require 'config.php';
+    $mail->Username = $config['smtp_user'];
+    $mail->Password = $config['smtp_pass'];
+
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 

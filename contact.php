@@ -26,8 +26,8 @@ try {
     $mail->SMTPAuth = true;
     
     $config = require 'config.php';
-    $mail->Username = $config['smtp_user'];
-    $mail->Password = $config['smtp_pass'];
+    $mail->Username = $smtp_user;
+    $mail->Password = $smtp_pass;
 
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;

@@ -755,33 +755,26 @@ th {
 
 
 /*############## Mobile ##############*/
-@media screen and (max-width: 680px) {
-  .photo-grid {
-    column-count: 2;
-  }
-}
-@media screen and (max-width: 480px) {
-  .photo-grid {
-    column-count: 1;
-  }
-}
 @media screen and (max-width: 768px) {
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
   body.noscroll {
     overflow: hidden;
   }
-
   .glow-dot {
     display: none !important;
   }
   .gallery-card-inner {
     transform: none !important;
   }
-
   .flip-card-back {
     transform: none !important;
     position: absolute;
     bottom: 0;
     top: auto;
+    width: 100%;
     height: auto;
     padding: 10px;
     background: rgba(0, 0, 0, 0.7);
@@ -789,19 +782,18 @@ th {
     align-items: center;
     justify-content: center;
   }
-  .flip-card-back a{
+  .flip-card-back a {
     padding: 5px;
   }
   .flip-card-front img {
     filter: brightness(0.6);
   }
-
   .dropdown {
     display: block;
     margin-left: auto;
     cursor: pointer;
+    z-index: 1000;
   }
-
   .close-btn {
     display: block;
     font-size: 40px;
@@ -810,8 +802,8 @@ th {
     top: 20px;
     right: 60px;
     cursor: pointer;
+    z-index: 1001;
   }
-
   ul.navbar {
     display: none;
     flex-direction: column;
@@ -826,57 +818,66 @@ th {
     text-align: center;
     align-items: center;
     z-index: 999;
+    overflow-y: auto;
   }
-
   ul.navbar.responsive {
     display: flex;
   }
-
   ul.navbar.responsive li {
     display: block;
-    float: none;
     margin: 10px 0;
   }
-
   ul.navbar.responsive li a {
     font-size: 24px;
     padding: 10px;
   }
-
   .div2img {
     justify-content: center;
     padding: 20px;
     text-align: center;
     flex-direction: column;
   }
-
   .div2text {
     width: 100%;
     padding: 20px;
     font-size: 16px;
     text-align: center;
   }
-
   .div2text span {
     font-size: inherit;
   }
-
   .gallery-cards {
     flex-direction: column;
     align-items: center;
   }
-
   .tooltip-box {
     font-size: 16px;
     padding: 10px 16px;
   }
-
   .package-container {
     flex-direction: column;
     align-items: center;
   }
-
   .contact-form {
     padding: 0 10px;
+  }
+  /* Modal fix for small screens */
+  .modal-content {
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow: auto;
+    margin: 5vh auto;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .photo-grid {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .photo-grid {
+    column-count: 1;
   }
 }
